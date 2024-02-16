@@ -5,7 +5,7 @@ import React from "react";
 function Page() {
   return (
     <View>
-      <Text>Explore</Text>
+      <Text>Trips</Text>
     </View>
   )
 }
