@@ -50,7 +50,6 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  
   const router = useRouter();
 
   return (
@@ -59,19 +58,40 @@ function RootLayoutNav() {
       <Stack.Screen
         name="(modals)/login"
         options={{
-          title: 'Log in or sign up',
+          title: "Log in or sign up",
           presentation: "modal",
           headerTitleStyle: {
             fontFamily: "mon-sb",
           },
           headerLeft: () => (
-            <TouchableOpacity 
+            <TouchableOpacity
               onPress={() => router.back()}
               style={{ padding: 10 }}
             >
               <Ionicons name="close-outline" size={28} />
             </TouchableOpacity>
-          )
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="listing/[id]"
+        options={{
+          headerTitle: "",
+        }}
+      />
+      <Stack.Screen
+        name="(modals)/bookings"
+        options={{
+          animation: 'fade',
+          presentation: "transparentModal",
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => router.back()}
+              style={{ padding: 10 }}
+            >
+              <Ionicons name="close-outline" size={28} />
+            </TouchableOpacity>
+          ),
         }}
       />
     </Stack>
